@@ -1,0 +1,19 @@
+Email: <%= @user.email %>
+<br/>
+<br/>
+
+ITEMS:
+<br/>
+<br/>
+<ol>
+  <% @user.items.each do |x| %>
+    <li><%= x.name %></li>
+  <% end %>
+</ol>
+
+<%= form_for @item do |f| %>
+  Name: <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
+
+<%#= link_to "ADD ANOTHER ITEM TO YOUR LIST OF INFINITE TREADMILL LIFE CHALLENGES", new_item_path %>
