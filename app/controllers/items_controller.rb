@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
 
   # POST /items
   def create
-    @item = Item.new(item_params)
+    @item = Item.new# removed params to get delete to work: (item_params)
 
     @item.user = current_user
 
@@ -52,7 +52,8 @@ class ItemsController < ApplicationController
     end
 
     # Only allow a trusted parameter "white list" through.
-    def item_params
-      params.require(:item).permit(:name, :user_id)
-    end
+    # commented this out to get delete to work
+    #def item_params
+      #params.require(:item).permit(:name, :user_id)
+    #end
 end

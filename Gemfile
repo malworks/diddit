@@ -24,6 +24,8 @@ source 'https://rubygems.org'
  gem 'figaro'
  gem 'devise'
  gem 'listen'
+ gem 'font-awesome-sass'
+
 
  group :development, :test do
    gem 'byebug'

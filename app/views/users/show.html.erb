@@ -14,6 +14,16 @@ ITEMS:
   <% end %>
 </ol>
 
+<table style="width:100%">
+  <% @user.items.each do |x| %>
+    <tr>
+      <td><%= link_to "", items_path(@item), method: :destroy, class: 'fa fa-check-square fa-xl' %></td>
+      <td><%= x.name %></td>
+      <td><i class="fa fa-trash fa-lg"></i></td>
+    </tr>
+  <% end %>
+</table>
+
 <%= form_for @item do |f| %>
   Name: <%= f.text_field :name %>
   <%= f.submit %>
