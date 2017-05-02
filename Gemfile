@@ -25,7 +25,7 @@ source 'https://rubygems.org'
  gem 'devise'
  gem 'listen'
  gem 'font-awesome-sass'
-
+ gem 'whenever', '0.9.7', :require => false
 
  group :development, :test do
    gem 'byebug'
