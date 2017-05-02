@@ -19,6 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 1.day, :at => '8:10 am' do
+every 1.day, :at => '10:36 am' do
   rake todo:delete_items
 end
