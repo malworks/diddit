@@ -19,6 +19,7 @@ ITEMS:
     <tr>
       <td><%= link_to "", item_path(x.id), method: :delete, class: 'fa fa-check fa-xl' %></td>
       <td><%= x.name %></td>
+      <td><%= distance_of_time_in_words( Time.now, x.created_at) %> </td>
       <td><i class="fa fa-trash fa-lg"></i></td>
     </tr>
   <% end %>
