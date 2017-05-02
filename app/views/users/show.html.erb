@@ -1,7 +1,7 @@
 Email: <%= @user.email %>
 
 <!-- This will show everything in the user object <%= @user.inspect %> -->
-
+<%= @item.inspect %>
 <br/>
 <br/>
 
@@ -17,7 +17,7 @@ ITEMS:
 <table style="width:100%">
   <% @user.items.each do |x| %>
     <tr>
-      <td><%= link_to "", items_path(@item), method: :destroy, class: 'fa fa-check-square fa-xl' %></td>
+      <td><%= link_to "", item_path(x.id), method: :delete, class: 'fa fa-check fa-xl' %></td>
       <td><%= x.name %></td>
       <td><i class="fa fa-trash fa-lg"></i></td>
     </tr>

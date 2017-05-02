@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
 
   # POST /items
   def create
-    @item = Item.new# removed params to get delete to work: (item_params)
+    @item = Item.new(item_params)
 
     @item.user = current_user
 
@@ -42,7 +42,7 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   def destroy
     @item.destroy
-    redirect_to items_url, notice: 'Item was successfully destroyed.'
+    redirect_to user_path, notice: 'Item was successfully destroyed.'
   end
 
   private
@@ -52,8 +52,7 @@ class ItemsController < ApplicationController
     end
 
     # Only allow a trusted parameter "white list" through.
-    # commented this out to get delete to work
-    #def item_params
-      #params.require(:item).permit(:name, :user_id)
-    #end
+    def item_params
+      params.require(:item).permit(:name, :user_id)
+    end
 end
